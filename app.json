@@ -1,9 +1,9 @@
 {
   "expo": {
-    "name": "LadderItApp",
-    "slug": "LadderItApp",
-    "scheme": "LadderItApp",
-    "version": "1.0.0",
+    "name": "Ladder It",
+    "slug": "Ladder It",
+    "scheme": "Ladder It",
+    "version": "2.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
     "userInterfaceStyle": "light",
@@ -15,10 +15,10 @@
     "ios": {
       "supportsTablet": true,
       "infoPlist": {
-        "NSCameraUsageDescription": "LadderItApp needs access to your Camera.",
-        "NSMicrophoneUsageDescription": "LadderItApp needs access to your Microphone."
+        "NSCameraUsageDescription": "Ladder It needs access to your Camera.",
+        "NSMicrophoneUsageDescription": "Ladder It needs access to your Microphone."
       },
-      "bundleIdentifier": "com.anonymous.LadderItApp"
+      "bundleIdentifier": "com.ladderit"
     },
     "android": {
       "adaptiveIcon": {
@@ -29,7 +29,7 @@
         "android.permission.CAMERA",
         "android.permission.RECORD_AUDIO"
       ],
-      "package": "com.anonymous.LadderItApp"
+      "package": "com.ladderit"
     },
     "web": {
       "favicon": "./assets/favicon.png"
@@ -39,9 +39,9 @@
       [
         "react-native-vision-camera",
         {
-          "cameraPermissionText": "LadderItApp needs access to your Camera.",
+          "cameraPermissionText": "Ladder It needs access to your Camera.",
           "enableMicrophonePermission": true,
-          "microphonePermissionText": "LadderItApp needs access to your Microphone."
+          "microphonePermissionText": "Ladder It needs access to your Microphone."
         }
       ],
       [

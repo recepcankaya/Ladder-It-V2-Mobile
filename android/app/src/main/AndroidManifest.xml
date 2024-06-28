@@ -26,8 +26,8 @@
         <action android:name="android.intent.action.VIEW"/>
         <category android:name="android.intent.category.DEFAULT"/>
         <category android:name="android.intent.category.BROWSABLE"/>
-        <data android:scheme="LadderItApp"/>
-        <data android:scheme="com.anonymous.LadderItApp"/>
+        <data android:scheme="ladderit"/>
+        <data android:scheme="com.ladderit"/>
       </intent-filter>
     </activity>
     <activity android:name="com.facebook.react.devsupport.DevSettingsActivity" android:exported="false"/>

@@ -27,8 +27,8 @@
       <dict>
         <key>CFBundleURLSchemes</key>
         <array>
-          <string>LadderItApp</string>
-          <string>com.anonymous.LadderItApp</string>
+          <string>Ladder It</string>
+          <string>com.ladderit</string>
         </array>
       </dict>
     </array>
