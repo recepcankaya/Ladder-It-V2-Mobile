@@ -1,8 +1,8 @@
 import { createClient } from "@supabase/supabase-js";
 import AsyncStorage from "@react-native-async-storage/async-storage";
-import { PUBLIC_SUPABASE_ANON_KEY, PUBLIC_SUPABASE_URL } from "@env";
-const SUPABASE_ANON_KEY = PUBLIC_SUPABASE_ANON_KEY;
-const SUPABASE_URL = PUBLIC_SUPABASE_URL;
+import { LOCAL_SUPABASE_URL, LOCAL_SUPABASE_ANON_KEY } from "@env";
+const SUPABASE_ANON_KEY = LOCAL_SUPABASE_ANON_KEY;
+const SUPABASE_URL = LOCAL_SUPABASE_URL;
 console.log("supabase", SUPABASE_URL, SUPABASE_ANON_KEY);
 const supabase = createClient<DB>(SUPABASE_URL, SUPABASE_ANON_KEY, {
   auth: {
