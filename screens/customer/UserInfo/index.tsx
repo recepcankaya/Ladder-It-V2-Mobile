@@ -30,7 +30,7 @@ const UserInfo = () => {
       const { data: { user } } = await getCurrentUser();
 
       if (!user) {
-        return router.push("/(auth)/login/1");
+        return router.push("/(auth)/login");
       }
 
       const { error } = await updateUserById({
@@ -49,7 +49,7 @@ const UserInfo = () => {
           username: username,
           lastLogin: new Date().toString(),
         });
-        router.push("/(tabs)/home/1");
+        router.push("/(tabs)/home");
         Alert.alert("Uygulamamıza hoşgeldin 🤗🥳", "");
       }
     } catch (error) {

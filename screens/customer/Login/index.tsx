@@ -41,7 +41,7 @@ const Login = () => {
           return Alert.alert("Hata", "Giriş başarısız! Lütfen tekrar deneyin.", [{ text: "Tamam" }]);
         }
 
-        router.push('(tabs)/brands/1');
+        router.push('(tabs)/brands');
 
       } catch (error) {
         return Alert.alert("Hata", "Giriş başarısız! Lütfen tekrar deneyin.", [{ text: "Tamam" }]);
@@ -58,7 +58,7 @@ const Login = () => {
       console.log('googleAuthData', data);
       console.log('googleAuthError-v1', error);
       if (error) return Alert.alert("Hata", "Giriş başarısız! Lütfen tekrar deneyin.", [{ text: "Tamam" }]);
-      return router.replace('/(tabs)/home/1');
+      return router.replace('/(tabs)/home');
     } catch (error) {
       console.log('googleAuthError-v2', error);
       return Alert.alert("Hata", "Giriş başarısız! Lütfen tekrar deneyin.", [{ text: "Tamam" }]);
@@ -122,11 +122,11 @@ const Login = () => {
         </TouchableOpacity>
         <View style={styles.registerContainer}>
           <Text>Hesabınız yok mu?</Text>
-          <Pressable style={styles.register} onPress={() => router.push("register/1")}><Text style={styles.registerText}>Kayıt ol!</Text></Pressable>
+          <Pressable style={styles.register} onPress={() => router.push("register")}><Text style={styles.registerText}>Kayıt ol!</Text></Pressable>
         </View>
       </View>
       <Pressable
-        onPress={() => router.replace("/(admin)/adminLogin/1")}
+        onPress={() => router.replace("/(admin)/adminLogin")}
         style={styles.businessButton}>
         <Text style={styles.businessText}>
           Üye İş Yeriyseniz Giriş Yapmak için

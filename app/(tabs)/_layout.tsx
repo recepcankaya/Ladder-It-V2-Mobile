@@ -1,15 +1,15 @@
 import { Tabs } from "expo-router";
 
 const TabsLayout = () => {
-    console.log('tabs');
+    console.log('tabsLayout');
     return (
-        <Tabs initialRouteName="home/[id]" screenOptions={{ headerShown: false }}>
-            <Tabs.Screen name="home/[id]" options={{ headerShown: false }} />
-            <Tabs.Screen name="profile/[id]" options={{ headerShown: false }} />
-            <Tabs.Screen name="brands/[id]" options={{ headerShown: false }} />
-            <Tabs.Screen name="qrCode/[id]" options={{ headerShown: false }} />
+        <Tabs initialRouteName="home" screenOptions={{ headerShown: false }}>
+            <Tabs.Screen name="home" options={{ headerShown: false }} />
+            <Tabs.Screen name="brands" options={{ headerShown: false }} />
+            <Tabs.Screen name="profile" options={{ headerShown: false }} />
+            <Tabs.Screen name="qrCode" options={{ headerShown: false }} />
         </Tabs>
-    )
+    );
 };
 
 export default TabsLayout;

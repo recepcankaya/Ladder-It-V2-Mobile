@@ -157,14 +157,10 @@ INSERT INTO
 INSERT INTO 
   public.users (
     id,
-    created_at,
-    last_login,
     username
   ) (
     SELECT
       id,
-      created_at,
-      last_sign_in_at,
       'user deneme' || (ROW_NUMBER() OVER ())
     FROM
       auth.users
@@ -190,9 +186,9 @@ INSERT INTO
           email,
           created_at,
           'brand deneme' || (ROW_NUMBER() OVER ()),
-          'https://www.google.com',
-          'https://www.google.com',
-          'https://www.google.com',
+          'https://picsum.photos/200',
+          'https://gittjeqpqcmmbterylkd.supabase.co/storage/v1/object/public/brand_tickets/espresso-check-ticket.jpg?t=2024-06-21T07%3A30%3A17.707Z',
+          'https://gittjeqpqcmmbterylkd.supabase.co/storage/v1/object/public/brand_free_right_images/espresso-check-not-used-free-right.png?t=2024-06-21T07%3A31%3A11.273Z',
           6,
           'Kahve'
       FROM
@@ -230,10 +226,11 @@ INSERT INTO
             email,
             'Ankara',
             '{"lat": 39.9334, "long": 32.8597}'::jsonb,
-            'https://www.google.com',
+            'https://www.youtube.com/embed/GbaiVH8spag?autoplay=1&mute=1',
             ARRAY[
-              '{"campaign_id": "0", "campaign_name": "Kampanya 1", "campaign_image": "https://www.google.com", "favourite": true}',
-              '{"campaign_id": "1", "campaign_name": "Kampanya 2", "campaign_image": "https://www.google.com", "favourite": false}'
+              '{"campaign_id": "0", "campaign_name": "Kampanya 1", "campaign_image": "https://gittjeqpqcmmbterylkd.supabase.co/storage/v1/object/public/ladderit-local/qpddr97pq4whve6t415hpl25f3kf.jpeg?t=2024-06-23T05%3A25%3A11.635Z", "favourite": true}',
+              '{"campaign_id": "1", "campaign_name": "Kampanya 2", "campaign_image": "https://picsum.photos/200", "favourite": false}',
+              '{"campaign_id": "2", "campaign_name": "Kampanya 3", "campaign_image": "https://picsum.photos/200", "favourite": false}'
             ]::jsonb[],
             0,
             0,
@@ -304,21 +301,21 @@ INSERT INTO
                     "name": "Ürün 1",
                     "price": "10 TL",
                     "description": "İlk ürünün açıklaması",
-                    "image": "https://www.google.com"
+                    "image": "https://picsum.photos/200"
                   },
                   {
                     "id": 1,
                     "name": "Ürün 2",
                     "price": "20 TL",
                     "description": "İkinci ürünün açıklaması",
-                    "image": "https://www.google.com"
+                    "image": "https://picsum.photos/200"
                   },
                   {
                     "id": 2,
                     "name": "Ürün 3",
                     "price": "3 TL",
                     "description": "Üçüncü ürünün açıklaması",
-                    "image": "https://www.google.com"
+                    "image": "https://picsum.photos/200"
                   }
                 ]
               }',
@@ -331,21 +328,21 @@ INSERT INTO
                     "name": "Ürün 4",
                     "price": "40 TL",
                     "description": "Dördüncü ürünün açıklaması",
-                    "image": "https://www.google.com"
+                    "image": "https://picsum.photos/200"
                   },
                   {
                     "id": 4,
                     "name": "Ürün 5",
                     "price": "50 TL",
                     "description": "Beşinci ürünün açıklaması",
-                    "image": "https://www.google.com"
+                    "image": "https://picsum.photos/200"
                   },
                   {
                     "id": 6,
                     "name": "Ürün 7",
                     "price": "70 TL",
                     "description": "Yedinci ürünün açıklaması",
-                    "image": "https://www.google.com"
+                    "image": "https://picsum.photos/200"
                   }
                 ]
               }',
@@ -358,21 +355,21 @@ INSERT INTO
                     "name": "Ürün 8",
                     "price": "80 TL",
                     "description": "Sekizinci ürünün açıklaması",
-                    "image": "https://www.google.com"
+                    "image": "https://picsum.photos/200"
                   },
                   {
                     "id": 8,
                     "name": "Ürün 9",
                     "price": "90 TL",
                     "description": "Dokuzuncu ürünün açıklaması",
-                    "image": "https://www.google.com"
+                    "image": "https://picsum.photos/200"
                   },
                   {
                     "id": 9,
                     "name": "Ürün 10",
                     "price": "100 TL",
                     "description": "Onuncu ürünün açıklaması",
-                    "image": "https://www.google.com"
+                    "image": "https://picsum.photos/200"
                   }
                 ]
               }',
@@ -385,21 +382,21 @@ INSERT INTO
                     "name": "Ürün 11",
                     "price": "110 TL",
                     "description": "Onbirinci ürünün açıklaması",
-                    "image": "https://www.google.com"
+                    "image": "https://picsum.photos/200"
                   },
                   {
                     "id": 11,
                     "name": "Ürün 12",
                     "price": "120 TL",
                     "description": "Onikinci ürünün açıklaması",
-                    "image": "https://www.google.com"
+                    "image": "https://picsum.photos/200"
                   },
                   {
                     "id": 12,
                     "name": "Ürün 13",
                     "price": "130 TL",
                     "description": "Onüçüncü ürünün açıklaması",
-                    "image": "https://www.google.com"
+                    "image": "https://picsum.photos/200"
                   }
                 ]
               }',
@@ -412,21 +409,21 @@ INSERT INTO
                     "name": "Ürün 14",
                     "price": "140 TL",
                     "description": "Ondördüncü ürünün açıklaması",
-                    "image": "https://www.google.com"
+                    "image": "https://picsum.photos/200"
                   },
                   {
                     "id": 14,
                     "name": "Ürün 15",
                     "price": "150 TL",
                     "description": "Onbeşinci ürünün açıklaması",
-                    "image": "https://www.google.com"
+                    "image": "https://picsum.photos/200"
                   },
                   {
                     "id": 15,
                     "name": "Ürün 16",
                     "price": "160 TL",
                     "description": "Onaltıncı ürünün açıklaması",
-                    "image": "https://www.google.com"
+                    "image": "https://picsum.photos/200"
                   }
                 ]
               }'
@@ -436,5 +433,10 @@ INSERT INTO
         WHERE
             auth.users.email LIKE '%brandbranch%'
     );
+
+INSERT INTO storage.buckets
+  (id, name, public)
+VALUES
+  ('campaigns', 'campaigns', true);
 
 COMMIT;

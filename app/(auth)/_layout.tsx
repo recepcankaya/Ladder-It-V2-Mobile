@@ -1,14 +1,13 @@
-import { Stack } from "expo-router"
+import { Stack } from "expo-router";
 
-const AuthStack = () => {
-    console.log('authLayout');
+const AuthLayout = () => {
     return (
         <Stack screenOptions={{ headerShown: false }}>
-            <Stack.Screen name="index" options={{ headerShown: false }} />
-            <Stack.Screen name="login/[id]" options={{ headerShown: false }} />
-            <Stack.Screen name="register/[id]" options={{ headerShown: false }} />
+            <Stack.Screen name="loading" options={{ headerShown: false }} />
+            <Stack.Screen name="login" options={{ headerShown: false }} />
+            <Stack.Screen name="register" options={{ headerShown: false }} />
         </Stack>
-    )
-}
+    );
+};
 
-export default AuthStack;
+export default AuthLayout;
