@@ -1,5 +1,4 @@
 import { View,StyleSheet } from 'react-native'
-import React from 'react'
 import colors from '../../../../ui/colors';
 
 type Props = {

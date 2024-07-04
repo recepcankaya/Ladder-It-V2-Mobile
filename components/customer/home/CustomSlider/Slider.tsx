@@ -4,7 +4,7 @@ import colors from '../../../../ui/colors'
 import SliderDot from './SliderDot'
 
 type CustomSliderProps = {
-    data: { image: string, favourite: boolean }[],
+    data: SupabaseCampaigns[],
 }
 
 const { width } = Dimensions.get("window")
