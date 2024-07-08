@@ -14,6 +14,7 @@ const styles = StyleSheet.create({
     bottom: 300,
   },
   camera: {
+    flex:1,
     ...StyleSheet.absoluteFillObject,
   },
   backButton: {

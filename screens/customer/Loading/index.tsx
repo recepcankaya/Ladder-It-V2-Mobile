@@ -22,7 +22,7 @@ AppState.addEventListener("change", (state) => {
 });
 
 const Loading = () => {
-  console.log('heree')
+  console.log('Loading-Start');
   const userUpdate = useUserStore((state) => state.setUser);
 
   const brand = useBrandStore(state => state.brand);
@@ -33,8 +33,8 @@ const Loading = () => {
 
   const setBrandBranchesDetails = useBrandBranchesDetailsStore(state => state.setBrandBranchesDetails);
 
-
   const [session, setSession] = useState<Session | null>(null);
+
 
   useEffect(() => {
     supabase.auth.getSession().then(({ data: { session } }) => {
@@ -46,8 +46,8 @@ const Loading = () => {
     });
   }, []);
 
+
   const checkLogin = async (session: Session | null) => {
-    return router.replace("/(auth)/login/1");//Login
     if (session && session.user) {
       const { data: user } = await getUserById(session.user.id);
       if (user) {
@@ -56,7 +56,8 @@ const Loading = () => {
           username: user.username,
           lastLogin: user.last_login,
         });
-        return router.replace("/(tabs)/brands/1");
+        console.log('heree-1')
+        return router.replace("/(tabs)/brands");
       } else {
         const { data: brandData } = await getBrandWithBranchesById(session.user.id);
         if (brandData) {
@@ -81,17 +82,24 @@ const Loading = () => {
             totalUsedFreeRights: calculatedData.total_used_free_rights,
             totalUnusedFreeRights: calculatedData.total_unused_free_rights
           });
-          return router.replace("/(admin)/adminHome/1");
-        }
-        else {
+          console.log('heree-2')
+          return router.replace("/(admin)/adminHome");
+        } else {
           const { data: brandBranchData } = await getBrandBranchById(session.user.id);
 
           if (!brandBranchData) {
-            Alert.alert(
-              "Bir sorun oluştur",
-              "Markanıza ait bir şube bulunamadı. Lütfen tekrar giriş yapınız."
+            return Alert.alert(
+              "Bir sorun oluştu",
+              "Markanıza ait bir şube bulunamadı. Lütfen tekrar giriş yapınız.",
+              [
+                {
+                  text: "Tamam",
+                  onPress: () => {
+                    return router.replace("/(auth)/login");
+                  },
+                },
+              ]
             );
-            return;
           }
           setBrandBranch({
             ...brandBranch,
@@ -104,18 +112,25 @@ const Loading = () => {
             dailyTotalOrders: brandBranchData.daily_total_orders,
             dailyTotalUsedFreeRights: brandBranchData.daily_total_used_free_rights,
             monthlyTotalOrders: brandBranchData.monthly_total_orders,
-
           });
 
           const { data: brandData } = await getBrandById(brandBranchData.brand_id);
 
           if (!brandData) {
-            Alert.alert(
-              "Bir sorun oluştur",
-              "Şubenize ait bir marka bulunamadı. Lütfen tekrar giriş yapınız."
+            return Alert.alert(
+              "Bir sorun oluştu",
+              "Şubenize ait bir marka bulunamadı. Lütfen tekrar giriş yapınız.",
+              [
+                {
+                  text: "Tamam",
+                  onPress: () => {
+                    return router.replace("/(auth)/login");
+                  },
+                },
+              ]
             );
-            return;
           }
+
           setBrand({
             ...brand,
             id: brandBranchData.brand_id,
@@ -123,12 +138,14 @@ const Loading = () => {
             brandLogoUrl: brandData.brand_logo_url,
             requiredNumberForFreeRight: brandData.required_number_for_free_right,
           });
-          return router.replace("/(admin)/branchHome/1");//Branch Home
+          console.log('heree-3')
+          return router.replace("/(admin)/branchHome");
         }
       }
     }
+    console.log('heree-4')
 
-    return router.replace("/(auth)/login/1");//Login
+    return router.replace("/(auth)/login");
   };
 
   return (
@@ -139,4 +156,3 @@ const Loading = () => {
 };
 
 export default Loading;
-

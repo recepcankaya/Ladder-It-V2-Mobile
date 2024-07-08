@@ -94,7 +94,7 @@ const AdminHome = () => {
         refreshing={refreshing}
         weeklyTotalOrders={brandBranchesDetails.weeklyTotalOrders}
       />
-      <Icon name="qr-code-outline" size={responsiveFontSize(40)} color="black" onPress={() => router.push("/adminCamera/[id]")} />
+      <Icon name="qr-code-outline" size={responsiveFontSize(40)} color="black" onPress={() => router.push("/adminCamera")} />
       <CustomLoading visible={refreshing} />
     </SafeAreaView>
   );

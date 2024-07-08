@@ -168,6 +168,7 @@ dependencies {
     }
 
     implementation "com.google.android.gms:play-services-auth:20.7.0"
+    
 }
 
 apply from: new File(["node", "--print", "require.resolve('@react-native-community/cli-platform-android/package.json', { paths: [require.resolve('react-native/package.json')] })"].execute(null, rootDir).text.trim(), "../native_modules.gradle");

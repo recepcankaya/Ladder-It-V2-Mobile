@@ -16,7 +16,7 @@ const Register = () => {
                 console.log('registerData', data);
                 console.log('registerError-v1', error);
                 if (error) return Alert.alert("Hata", "Kayıt başarısız! Lütfen tekrar deneyin.", [{ text: "Tamam" }]);
-                router.replace('/(tabs)/home/1');
+                router.replace('/(tabs)/home');
             } catch (error) {
                 console.log('registerError-v2', error);
                 return Alert.alert("Hata", "Kayıt başarısız! Lütfen tekrar deneyin.", [{ text: "Tamam" }]);
@@ -30,7 +30,7 @@ const Register = () => {
             console.log('googleAuthData', data);
             console.log('googleAuthError-v1', error);
             if (error) return Alert.alert("Hata", "Giriş başarısız! Lütfen tekrar deneyin.", [{ text: "Tamam" }]);
-            router.replace('/(tabs)/home/1');
+            router.replace('/(tabs)/home');
         } catch (error) {
             console.log('googleAuthError-v2', error);
             return Alert.alert("Hata", "Giriş başarısız! Lütfen tekrar deneyin.", [{ text: "Tamam" }]);
@@ -43,7 +43,6 @@ const Register = () => {
             <View style={styles.form}>
                 <Text style={styles.title}>Hoşgeldin!</Text>
                 <Text style={styles.subtitle}>Kayıt olmak için lütfen gerekli bilgileri giriniz.</Text>
-                <GoogleAuthButton title="Google ile Kayıt Ol" onPress={googleAuth} />
                 <View style={styles.orView}>
                     <View style={styles.orLine} />
                     <Text style={styles.orText}>VEYA</Text>
