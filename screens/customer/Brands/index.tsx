@@ -136,7 +136,7 @@ const Brands = () => {
       campaigns: item.campaigns,
       videoUrl: item.videoUrl,
     });
-    router.push("/home/1");
+    router.push("/home");
   };
 
   useEffect(() => {

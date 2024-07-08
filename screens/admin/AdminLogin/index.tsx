@@ -63,7 +63,7 @@ const AdminLogin = () => {
         totalUnusedFreeRights: calculatedData.total_unused_free_rights
       });
 
-      return router.push("/(admin)/adminHome/1");
+      return router.push("/(admin)/adminHome");
     } else {
       // If the user is a branch
       const { data: brandBranchData } = await getBrandBranchById(data.user.id);
@@ -108,7 +108,7 @@ const AdminLogin = () => {
     setEmail("");
     setPassword("");
 
-    return router.replace("/(admin)/branchHome/1");
+    return router.replace("/(admin)/branchHome");
   };
 
   return (

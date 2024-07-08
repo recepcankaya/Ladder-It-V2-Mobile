@@ -1,4 +1,4 @@
-package com.anonymous.LadderItApp
+package com.ladderit
 
 import android.app.Application
 import android.content.res.Configuration

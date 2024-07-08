@@ -1,41 +1,46 @@
-import { Text } from 'react-native';
-import { TouchableOpacity, StyleSheet } from 'react-native';
-import Icon from 'react-native-vector-icons/Ionicons';
-import colors from '../../ui/colors';
-import { responsiveFontSize } from '../../ui/responsiveFontSize';
+import {
+  GoogleSignin,
+  GoogleSigninButton,
+  statusCodes,
+} from "@react-native-google-signin/google-signin";
+import supabase from "../../lib/supabase";
 
-type GoogleAuthButtonProps = {
-    title: string,
-    onPress: () => void,
+export default function () {
+  GoogleSignin.configure({
+    scopes: ["https://www.googleapis.com/auth/drive.readonly"],
+    webClientId:
+      "781940586979-uiejefr0aijpn5p1u185d0nlq7barn7i.apps.googleusercontent.com",
+  });
+
+  return (
+    <GoogleSigninButton
+      size={GoogleSigninButton.Size.Wide}
+      color={GoogleSigninButton.Color.Dark}
+      onPress={async () => {
+        try {
+          await GoogleSignin.hasPlayServices();
+          const userInfo = await GoogleSignin.signIn();
+          if (userInfo.idToken) {
+            const { data, error } = await supabase.auth.signInWithIdToken({
+              provider: "google",
+              token: userInfo.idToken,
+            });
+            console.log(error, data);
+          } else {
+            throw new Error("no ID token present!");
+          }
+        } catch (error: any) {
+          if (error.code === statusCodes.SIGN_IN_CANCELLED) {
+            // user cancelled the login flow
+          } else if (error.code === statusCodes.IN_PROGRESS) {
+            // operation (e.g. sign in) is in progress already
+          } else if (error.code === statusCodes.PLAY_SERVICES_NOT_AVAILABLE) {
+            // play services not available or outdated
+          } else {
+            // some other error happened
+          }
+        }
+      }}
+    />
+  );
 }
-
-const GoogleAuthButton = ({ title, onPress }: GoogleAuthButtonProps) => {
-    return (
-        <TouchableOpacity style={styles.button} onPress={onPress}>
-            <Icon name='logo-google' size={responsiveFontSize(20)} color={colors.black} />
-            <Text style={styles.text}>{title}</Text>
-        </TouchableOpacity>
-    );
-};
-
-const styles = StyleSheet.create({
-    button: {
-        width: '100%',
-        height: 40,
-        borderRadius: 5,
-        backgroundColor: colors.yellow,
-        justifyContent: 'center',
-        alignItems: 'center',
-        flexDirection: 'row',
-        borderWidth: 1,
-        borderColor: colors.grey,
-    },
-    text: {
-        color: colors.black,
-        fontSize: responsiveFontSize(13),
-        fontWeight: 'bold',
-        marginLeft: 10
-    },
-})
-
-export default GoogleAuthButton;

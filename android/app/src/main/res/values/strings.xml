@@ -2,4 +2,5 @@
   <string name="app_name">LadderItApp</string>
   <string name="expo_splash_screen_resize_mode" translatable="false">contain</string>
   <string name="expo_splash_screen_status_bar_translucent" translatable="false">false</string>
+  <string name="server_client_id">781940586979-b1un29r2hcdh0f2a7nk42616njkrljhf.apps.googleusercontent.com</string>
 </resources>
