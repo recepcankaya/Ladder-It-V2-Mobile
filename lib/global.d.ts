@@ -7,4 +7,5 @@ declare global {
     Database["public"]["Tables"]["brand_branch"]["Row"];
   type SupabaseUser = Database["public"]["Tables"]["users"]["Row"];
   type SupabaseUserOrders = Database["public"]["Tables"]["user_orders"]["Row"];
+  type SupabaseCampaigns = Database["public"]["Tables"]["campaigns"]["Row"];
 }

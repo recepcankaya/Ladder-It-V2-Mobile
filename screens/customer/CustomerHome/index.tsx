@@ -10,7 +10,7 @@ import useBrandStore from "../../../store/brandStore";
 import useBrandBranchStore from "../../../store/brandBranchStore";
 import supabase from "../../../lib/supabase";
 import { Video, ResizeMode } from 'expo-av';
-import Carousel from "../../../components/customer/home/CustomCarousel/Carousel";
+import Slider from "../../../components/customer/home/CustomSlider/Slider";
 import { getBrandBranchMenuUrl, getUserOrderByBrandIdAndBranchId } from "../../../lib/supabaseServices";
 import { decodeTurkishCharacters } from "../../../lib/utils";
 import styles from "./styles";
@@ -88,7 +88,7 @@ const CustomerHome = () => {
           </Text>
         </TouchableOpacity>
         {campaigns &&
-          <Carousel data={campaigns} />
+          <Slider data={campaigns}/>
         }
         {brandBranchVideoUrl &&
           <View style={styles.container}>

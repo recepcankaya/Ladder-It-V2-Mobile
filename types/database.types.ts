@@ -128,6 +128,41 @@ export type Database = {
           },
         ]
       }
+      campaigns: {
+        Row: {
+          branch_id: string | null
+          id: string
+          image_url: string
+          is_favourite: boolean
+          name: string
+          position: number
+        }
+        Insert: {
+          branch_id?: string | null
+          id?: string
+          image_url: string
+          is_favourite?: boolean
+          name: string
+          position: number
+        }
+        Update: {
+          branch_id?: string | null
+          id?: string
+          image_url?: string
+          is_favourite?: boolean
+          name?: string
+          position?: number
+        }
+        Relationships: [
+          {
+            foreignKeyName: "campaigns_branch_id_fkey"
+            columns: ["branch_id"]
+            isOneToOne: false
+            referencedRelation: "brand_branch"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
       employees: {
         Row: {
           created_at: string
@@ -223,21 +258,15 @@ export type Database = {
       }
       users: {
         Row: {
-          created_at: string | null
           id: string
-          last_login: string | null
           username: string | null
         }
         Insert: {
-          created_at?: string | null
           id: string
-          last_login?: string | null
           username?: string | null
         }
         Update: {
-          created_at?: string | null
           id?: string
-          last_login?: string | null
           username?: string | null
         }
         Relationships: [
@@ -307,6 +336,7 @@ export type Database = {
           p_product_id: number
           p_new_price: string
           p_new_description: string
+          p_new_image: string
         }
         Returns: undefined
       }
